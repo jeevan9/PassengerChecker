@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">PassengerChecker</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string-array name="trainnumbers">
+        <item>TRAIN NUMBER</item>
+        <item>17230</item>
+        <item>14229</item>
+        <item>15256</item>
+        <item>16248</item>
+        <item>18993</item>
+        <item>12345</item>
+        <item>19092</item>
+    </string-array>
+</resources>
