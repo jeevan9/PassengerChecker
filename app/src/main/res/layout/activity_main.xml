@@ -73,7 +73,7 @@
         android:layout_height="70dp"
         android:layout_below="@+id/ll1" >
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button1"
             android:onClick="login"
@@ -118,18 +118,7 @@
             android:clickable="true"
             android:onClick="update"
             android:textColor="#ff1b07" />
-  --> <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password"
-        android:onClick="forgotpassword"
-        android:layout_below="@+id/editText2"
-        android:background="#FF6F00"
-        android:textColor="#FFFFFF"
-        android:layout_weight="1"
-        android:layout_marginRight="10dp"
-        />
+  -->
         <Button
             android:layout_weight="1"
             android:layout_width="wrap_content"

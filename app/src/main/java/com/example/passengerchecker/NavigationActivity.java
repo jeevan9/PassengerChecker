@@ -110,10 +110,15 @@ public class NavigationActivity extends AppCompatActivity
             Intent i=new Intent(this,PasswordChangeActivity.class);
             startActivity(i);
         }
+        else if (id == R.id.fp) {
+            Intent i=new Intent(this,PasswordSetActivity.class);
+            startActivity(i);
+        }
         else if (id == R.id.logout) {
             Intent i=new Intent(this,MainActivity.class);
             startActivity(i);
         }
+
         else if (id == R.id.nav_share) {
 
         }

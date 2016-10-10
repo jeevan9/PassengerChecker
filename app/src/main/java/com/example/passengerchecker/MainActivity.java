@@ -58,10 +58,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void forgotpassword(View v)
-    {
-        Intent i=new Intent(this,PasswordSetActivity.class);
-        startActivity(i);
-
-    }
 }
