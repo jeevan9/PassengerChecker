@@ -52,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void update(View v)
+    public void forgotpassword(View v)
     {
-        Intent i=new Intent(this,PasswordChangeActivity.class);
+        Intent i=new Intent(this,PasswordSetActivity.class);
         startActivity(i);
     }
 

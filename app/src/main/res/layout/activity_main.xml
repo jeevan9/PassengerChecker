@@ -30,6 +30,7 @@
                 android:layout_weight="1"
                 android:layout_marginTop="27dp"
                 android:src="@drawable/un2" />
+
             <EditText
                 android:id="@+id/editText1"
                 android:layout_weight="4"
@@ -67,66 +68,73 @@
                 android:ems="10" />
         </LinearLayout>
     </LinearLayout>
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/l1"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="90dp"
         android:layout_below="@+id/ll1" >
+
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_toLeftOf="@+id/button3"
             android:id="@+id/button1"
             android:onClick="login"
             android:background="#FF6F00"
             android:layout_gravity="center_horizontal|center_vertical"
             android:text="Login"
             android:textColor="#FFFFFF"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-    </RelativeLayout>
-    <LinearLayout
-        android:id="@+id/l2"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@id/l1"
-        android:orientation="horizontal"
-        >
-        <!--
-        <TextView
-            android:id="@+id/button2"
-            android:gravity="center"
-            android:paddingLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forgot Password ?"
-            android:layout_below="@+id/editText2"
-            android:textColor="#ff1b07"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:onClick="forgotpassword"
-            android:layout_marginRight="10dp"
-            />
-
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="UPDATE PASSWORD"
-            android:id="@+id/button3"
-            android:clickable="true"
-            android:onClick="update"
-            android:textColor="#ff1b07" />
-  -->
+            android:layout_marginRight="10dp"/>
         <Button
             android:layout_weight="1"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UPDATE PASSWORD"
+            android:text="Forgot PASSWORD"
             android:id="@+id/button3"
-            android:onClick="update"
+            android:onClick="forgotpassword"
             android:background="#FF6F00"
             android:textColor="#FFFFFF" />
+
+
     </LinearLayout>
+
+
+
+    <!-- <LinearLayout
+         android:id="@+id/l2"
+         android:layout_marginTop="20dp"
+         android:layout_width="match_parent"
+         android:layout_height="60dp"
+         android:layout_below="@id/l1"
+         android:orientation="horizontal"
+         >
+         <TextView
+             android:id="@+id/button2"
+             android:gravity="center"
+             android:paddingLeft="20dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Forgot Password ?"
+             android:layout_below="@+id/editText2"
+             android:textColor="#ff1b07"
+             android:layout_weight="1"
+             android:clickable="true"
+             android:onClick="forgotpassword"
+             android:layout_marginRight="10dp"
+             />
+
+         <TextView
+             android:layout_weight="1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:text="UPDATE PASSWORD"
+             android:id="@+id/button3"
+             android:clickable="true"
+             android:onClick="update"
+             android:textColor="#ff1b07" />
+
+     </LinearLayout>-->
 </RelativeLayout>
