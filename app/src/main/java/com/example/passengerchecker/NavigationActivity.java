@@ -15,17 +15,27 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+//    Login l1=new Login();
+  //  TextView nav_header_name,nav_header_mailid;
+    /* public  NavigationActivity(String name,String mailid)
+     {
+         this.name=name;
+         this.mailid=mailid;
+     }*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-/*
+
+
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +53,10 @@ public class NavigationActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+       /* nav_header_name= (TextView) findViewById(R.id.nav_name);
+        nav_header_mailid= (TextView) findViewById(R.id.nav_mailid);
+        nav_header_name.setText(l1.name);
+        nav_header_mailid.setText(l1.emailid);*/
 
     }
     public void setDate(View v)

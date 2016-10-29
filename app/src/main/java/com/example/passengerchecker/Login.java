@@ -19,7 +19,13 @@ import android.widget.Toast;
 
 public class  Login extends AsyncTask<String,Void,String>{
     private Context context;
+    String name,emailid;
     ProgressDialog loading;
+    public Login()
+    {
+        this.name="name";
+        this.emailid="emailid";
+    }
     public Login(Context cxt)
     {
         context=cxt;
@@ -74,8 +80,10 @@ public class  Login extends AsyncTask<String,Void,String>{
         String res[]=result.split(" ");
         if(res[0].equals("Welcome"))
         {
+            name=res[1];
+            emailid=res[2];
             context.startActivity(new Intent(context, NavigationActivity.class));
-
+            //NavigationActivity name1=new NavigationActivity(res[1],res[2]);
         }
 
     }

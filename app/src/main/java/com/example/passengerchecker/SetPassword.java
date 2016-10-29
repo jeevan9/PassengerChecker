@@ -89,7 +89,7 @@ public class SetPassword extends AsyncTask<String,Void,String> {
                 PendingIntent sentPI;
                 String sent="SMS_SENT";
                 sentPI=PendingIntent.getBroadcast(context,0,new Intent(sent),0);
-                ;               smsOperation.sendTextMessage(res[1], null, messageToSend, sentPI, null);
+                smsOperation.sendTextMessage(res[1], null, messageToSend, sentPI, null);
                 Toast.makeText(context, "SMS Sent Seuccessfully ", Toast.LENGTH_SHORT).show();
 
                 // SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null,null);
