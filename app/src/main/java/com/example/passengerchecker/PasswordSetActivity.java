@@ -1,6 +1,7 @@
 package com.example.passengerchecker;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,25 +37,26 @@ public class PasswordSetActivity extends AppCompatActivity {
         Intent i=new Intent(this,MainActivity.class);
         startActivity(i);
     }
-    public void resetpassword(View v)
-    {
-        t1= (EditText) findViewById(R.id.editText1);
-        t2= (EditText) findViewById(R.id.editText2);
-        t3= (EditText) findViewById(R.id.editText3);
-        String userid=t1.getText().toString();
-        String otp1=t2.getText().toString();
-        String newp=t3.getText().toString();
-        int flag=0;
-        if((otp1.equals("")||otp1.length()==0)&&newp.length()==0)
+
+   /* public void resetpassword(View v) {
+        t1 = (EditText) findViewById(R.id.editText1);
+        t2 = (EditText) findViewById(R.id.editText2);
+        t3 = (EditText) findViewById(R.id.editText3);
+        String userid = t1.getText().toString();
+        String otp1 = t2.getText().toString();
+        String newp = t3.getText().toString();
+        int flag = 0;
+       if((otp1.equals("")||otp1.length()==0)&&newp.length()==0)
         {
             flag=1;
             Toast.makeText(this,"Please Enter OTP and New Password",Toast.LENGTH_SHORT).show();
         }
         else
         {
+            flag=1;
             if (otp1.equals("") || otp1.length() == 0) {
                 flag = 1;
-                Toast.makeText(this, "Please Enter userid", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please Enter username", Toast.LENGTH_SHORT).show();
             }
             if (newp.length() == 0) {
                 flag = 1;
@@ -63,7 +65,34 @@ public class PasswordSetActivity extends AppCompatActivity {
             }
         }
 
-    }
+        if (otp1.equals("") || otp1.length() == 0) {
+            flag = 1;
+            Toast.makeText(this, "Please Enter OTP", Toast.LENGTH_SHORT).show();
+        }
+        //if(flag!=1)
+        //{
+            /*SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
 
+            // getting String
+            String onetp = pref.getString("key_name5", null);
+            String unam = pref.getString("username", null);
+
+            if(otp1.equals(onetp))
+            {
+                String uname=unam;
+                OTPSetPassword p1=new OTPSetPassword(this);
+                p1.execute(uname,newp);
+            Intent i=new Intent(this,OTPVerificationActivity.class);
+            i.putExtra("uname",);
+            startActivity(i);
+            }
+
+        }
+
+    }*/
 
 }
+
+
+
