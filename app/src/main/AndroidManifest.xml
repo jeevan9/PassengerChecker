@@ -25,7 +25,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PasswordChangeActivity" />
         <activity android:name=".PasswordSetActivity" />
-        <activity android:name=".OTPVerificationActivity"></activity>
+        <activity android:name=".OTPVerificationActivity" />
+        <activity android:name=".TrainBogiActivity"></activity>
     </application>
 
 </manifest>

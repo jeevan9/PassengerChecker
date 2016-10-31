@@ -53,28 +53,12 @@
             android:layout_width="wrap_content"
             android:layout_height="70dp"></LinearLayout>
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/source"
-            android:entries="@array/trainnumbers"
-            android:layout_gravity="center_horizontal"
-            >
-        </Spinner>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_below="@+id/l2"
-            >
-
-        </LinearLayout>
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SUBMIT"
             android:textColor="#FFFFFF"
+            android:onClick="sub"
             android:background="#FF6F00"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>

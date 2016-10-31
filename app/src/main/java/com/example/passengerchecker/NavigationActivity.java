@@ -16,9 +16,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    EditText ta1;
+
+
 
 //    Login l1=new Login();
   //  TextView nav_header_name,nav_header_mailid;
@@ -69,11 +73,18 @@ public class NavigationActivity extends AppCompatActivity
     public void getDate(int year, int month,int day)
     {
         EditText t1=(EditText) findViewById(R.id.editText1);
-        t1.setText(day+"/"+(month+1)+"/"+year);
+        t1.setText(year+"-"+(month+1)+"-"+day);
     }
 
+public void sub(View v)
+{
+    ta1= (EditText) findViewById(R.id.editText1);
+String sdate=ta1.getText().toString();
+    //Toast.makeText(this,sdate,Toast.LENGTH_SHORT).show();
+    DateVerification d1=new DateVerification(this);
 
-
+    d1.execute(sdate,Login.logged_in_user);
+}
 
     @Override
     public void onBackPressed() {

@@ -1,8 +1,9 @@
 package com.example.passengerchecker;
 
 /**
- * Created by jeevansai on 05/10/2016.
+ * Created by jeevansai on 30/10/2016.
  */
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -17,21 +18,21 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-public class  Login extends AsyncTask<String,Void,String>{
+public class  DateVerification extends AsyncTask<String,Void,String>{
     private Context context;
-    String name,emailid;
+    String cdate;
+    public static String trainnumber="",trainname="";
+    Login in1=new Login();
     ProgressDialog loading;
-    public static String logged_in_user="";
-    public Login()
+    public DateVerification()
     {
-        this.name="name";
-        this.emailid="emailid";
+
     }
-    public Login(Context cxt)
+    public DateVerification(Context cxt)
     {
         context=cxt;
     }
-    private static final String GETDATA_URL="http://jeevan123.net46.net/login/login.php";
+    private static final String dateverify_URL="http://jeevan123.net46.net/login/dateverify.php";
 
     @Override
     protected void onPreExecute() {
@@ -45,11 +46,16 @@ public class  Login extends AsyncTask<String,Void,String>{
         // TODO Auto-generated method stub
         BufferedReader br=null;
         StringBuffer sb;
-        String s=arg0[0];
+        String ss=arg0[0];
+        String sss=arg0[1];
+        //Toast.makeText(context,ss, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context,s,Toast.LENGTH_SHORT).show();
+
+        String s1="?sdate="+ss+"&userid="+sss;
         try
         {
 
-            URL url=new URL(GETDATA_URL+s);
+            URL url=new URL(dateverify_URL+s1);
             HttpURLConnection con=(HttpURLConnection) url.openConnection();
             br=new BufferedReader(new InputStreamReader(con.getInputStream()));
             String line;
@@ -58,11 +64,13 @@ public class  Login extends AsyncTask<String,Void,String>{
             {
                 sb.append(line+"\n");
             }
+
         }
         catch (Exception e) {
             // TODO: handle exception
             return e.toString();
         }
+
         return sb.toString().trim();
 
     }
@@ -81,12 +89,15 @@ public class  Login extends AsyncTask<String,Void,String>{
         String res[]=result.split(" ");
         if(res[0].equals("Welcome"))
         {
-            name=res[1];
-            emailid=res[2];
-            String user_id=res[3];
-            logged_in_user=user_id;
-            context.startActivity(new Intent(context, NavigationActivity.class));
+            trainnumber=res[1];
+            trainname=res[2];
+            context.startActivity(new Intent(context, TrainBogiActivity.class));
             //NavigationActivity name1=new NavigationActivity(res[1],res[2]);
+        }
+        else
+        {
+         //   Toast.makeText(context,s,Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,"No trains available",Toast.LENGTH_SHORT).show();
         }
 
     }
