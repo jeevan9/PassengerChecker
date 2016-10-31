@@ -26,7 +26,8 @@
         <activity android:name=".PasswordChangeActivity" />
         <activity android:name=".PasswordSetActivity" />
         <activity android:name=".OTPVerificationActivity" />
-        <activity android:name=".TrainBogiActivity"></activity>
+        <activity android:name=".TrainBogiActivity" />
+        <activity android:name=".GetCoachActivity"></activity>
     </application>
 
 </manifest>

@@ -21,7 +21,7 @@ import android.widget.Toast;
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     EditText ta1;
-
+    public static String selected_date="";
 
 
 //    Login l1=new Login();
@@ -80,6 +80,7 @@ public void sub(View v)
 {
     ta1= (EditText) findViewById(R.id.editText1);
 String sdate=ta1.getText().toString();
+    selected_date=sdate;
     //Toast.makeText(this,sdate,Toast.LENGTH_SHORT).show();
     DateVerification d1=new DateVerification(this);
 
