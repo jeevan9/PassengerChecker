@@ -1,5 +1,6 @@
 package com.example.passengerchecker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 public class GetCoachActivity extends AppCompatActivity {
     Spinner spinner1;
     GetCoach gc1=new GetCoach();
+    public String cno="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,8 @@ public class GetCoachActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(GetCoachActivity.this, "Selected Item is "+parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                cno= (String) parent.getItemAtPosition(position);
+
             }
 
             @Override
@@ -40,6 +44,7 @@ public class GetCoachActivity extends AppCompatActivity {
     }
     public void passengerlist(View v)
     {
-        
+        RetrievePassengerList rpl=new RetrievePassengerList(GetCoachActivity.this);
+        rpl.execute(cno);
     }
 }
