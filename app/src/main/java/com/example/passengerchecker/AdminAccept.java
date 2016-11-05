@@ -104,7 +104,7 @@ public class  AdminAccept extends AsyncTask<String,Void,String>{
 
             try {
                 //Your ticket from"." ".$sql3[0]." "."to"." ".$sql3[1]."  "."on"." ".$doj+" "+"is verified successfully"+" "+res[11];
-                String messageToSend="Your ticket from"+" "+res[3]+" "+res[5]+" "+" pnr number "+res[13]+"on"+" "+res[8]+" "+"is verified successfully";
+                String messageToSend="Your ticket "+ "pnrnumber "+res[13]+" from"+" "+res[3]+" to  "+res[5]+" "+"on"+" "+res[8]+" "+"is verified successfully";
                 SmsManager smsOperation = SmsManager.getDefault();
                 PendingIntent sentPI;
                 String sent="SMS_SENT";
