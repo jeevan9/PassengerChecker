@@ -33,7 +33,7 @@ public class PassengerListAdapter extends RecyclerView.Adapter<PassengerListAdap
         //CardView cv;
         CardView cv;
         Context ctx;
-        TextView pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status,cb;
+        TextView pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status,cb,pnrno,mobileno;
 
         PersonViewHolder(View itemView,Context ctx,List<Passenger> personss) {
             super(itemView);
@@ -55,6 +55,9 @@ public class PassengerListAdapter extends RecyclerView.Adapter<PassengerListAdap
             trno= (TextView)itemView.findViewById(R.id.trnov);
             trname= (TextView)itemView.findViewById(R.id.trnamev);
             status= (TextView)itemView.findViewById(R.id.statusv);
+            mobileno= (TextView) itemView.findViewById(R.id.mobilenov);
+            pnrno= (TextView) itemView.findViewById(R.id.pnrnov);
+
             cb= (Button) itemView.findViewById(R.id.cb);
         }
     }
@@ -100,6 +103,8 @@ public class PassengerListAdapter extends RecyclerView.Adapter<PassengerListAdap
         personViewHolder.trno.setText(persons.get(i).trainnumber);
         personViewHolder.trname.setText(persons.get(i).trainname);
         personViewHolder.status.setText(persons.get(i).status);
+        personViewHolder.mobileno.setText(persons.get(i).mobileno);
+        personViewHolder.pnrno.setText(persons.get(i).pnrno);
         personViewHolder.cb.setOnClickListener(new View.OnClickListener()
         {
 

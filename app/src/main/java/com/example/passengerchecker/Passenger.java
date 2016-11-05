@@ -18,7 +18,9 @@ public class Passenger {
     String trainnumber;
     String trainname;
     String status;
-    Passenger(String pname,int age,String sex,int seatno,String coacho,String source,String destination,String doj,String arrival,String departure,String trainnumber,String trainname,String status)
+    String mobileno;
+    String pnrno;
+    Passenger(String pname,int age,String sex,int seatno,String coacho,String source,String destination,String doj,String arrival,String departure,String trainnumber,String trainname,String status,String mobileno,String pnrno)
     {
         this.pname=pname;
         this.age=age;
@@ -33,5 +35,7 @@ public class Passenger {
         this.trainnumber=trainnumber;
         this.trainname=trainname;
         this.status=status;
+        this.mobileno=mobileno;
+        this.pnrno=pnrno;
     }
 }

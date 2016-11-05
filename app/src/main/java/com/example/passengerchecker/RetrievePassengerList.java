@@ -105,7 +105,7 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
                // Toast.makeText(context,"pname "+pname+" date "+doj+"arrival " +arrival,Toast.LENGTH_LONG).show();
                 uo.add(count1,pname+" "+String.valueOf(seatno)+" "+coachno+" "+trno+" "+trname+" "+doj+" "+pnrnumber);
                Toast.makeText(context,uo.get(count1),Toast.LENGTH_LONG).show();
-                 passengerArrayList.add(new Passenger(pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status));
+                 passengerArrayList.add(new Passenger(pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status,mobileno,pnrnumber));
                 count1++;
             }
             context.startActivity(new Intent(context, PassengerListActivity.class));
