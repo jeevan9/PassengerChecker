@@ -103,7 +103,7 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
                 String mobileno=jo2.getString("mobileno");
                 String pnrnumber=jo2.getString("pnrnumber");
                // Toast.makeText(context,"pname "+pname+" date "+doj+"arrival " +arrival,Toast.LENGTH_LONG).show();
-                uo.add(count1,pname+" "+String.valueOf(seatno)+" "+coachno+" "+trno+" "+trname+" "+doj);
+                uo.add(count1,pname+" "+String.valueOf(seatno)+" "+coachno+" "+trno+" "+trname+" "+doj+" "+pnrnumber);
                Toast.makeText(context,uo.get(count1),Toast.LENGTH_LONG).show();
                  passengerArrayList.add(new Passenger(pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status));
                 count1++;
