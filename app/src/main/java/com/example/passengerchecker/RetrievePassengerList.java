@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,7 +23,9 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
     private Context context;
     public static int count1 = 0;
     ProgressDialog loading;
-    public static String logged_in_user="";
+
+    public static ArrayList<Passenger> passengerArrayList=new ArrayList<>();
+    public static ArrayList<String> uo=new ArrayList<String>();
     public RetrievePassengerList()
     {
 
@@ -97,21 +100,15 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
                 String trno=jo2.getString("trainnumber");
                 String trname=jo2.getString("trainname");
                 String status=jo2.getString("status");
-                Toast.makeText(context,"pname "+pname+" date "+doj,Toast.LENGTH_LONG).show();
-           //     uo.add(count1,username+" "+ordernum);
-             //   orders.add(new Pizza_Order("Username : "+jo2.getString("username")+"  Address : "+jo2.getString("address")+"   Order-Number : "+jo2.getString("ordernumber")+or+" status : "+jo2.getString("status")));
-                //orders.add(new Pizza_Order(jo2.getString("username")));
-
+                String mobileno=jo2.getString("mobileno");
+                String pnrnumber=jo2.getString("pnrnumber");
+               // Toast.makeText(context,"pname "+pname+" date "+doj+"arrival " +arrival,Toast.LENGTH_LONG).show();
+                uo.add(count1,pname+" "+String.valueOf(seatno)+" "+coachno+" "+trno+" "+trname+" "+doj);
+               Toast.makeText(context,uo.get(count1),Toast.LENGTH_LONG).show();
+                 passengerArrayList.add(new Passenger(pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status));
                 count1++;
             }
-           /* String opr="";
-            for (int j=0;j<uo.size();j++)
-            {
-                opr=opr+" j =  "+j +uo.get(j);
-            }
-            Toast.makeText(context,opr,Toast.LENGTH_SHORT).show();
-            context.startActivity(new Intent(context, AdminHome.class));
-*/
+            context.startActivity(new Intent(context, PassengerListActivity.class));
         }
 
         catch (Exception e) {
