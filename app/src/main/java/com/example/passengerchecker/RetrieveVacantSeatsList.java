@@ -1,7 +1,7 @@
 package com.example.passengerchecker;
 
 /**
- * Created by jeevansai on 03/11/2016.
+ * Created by jeevansai on 06/11/2016.
  */
 
 import java.io.BufferedReader;
@@ -19,22 +19,22 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
+public class  RetrieveVacantSeatsList extends AsyncTask<String,Void,String>{
     private Context context;
-    public static int count1 = 0;
+    public static int count2 = 0;
     ProgressDialog loading;
 
-    public static ArrayList<Passenger> passengerArrayList=new ArrayList<>();
-    public static ArrayList<String> uo=new ArrayList<String>();
-    public RetrievePassengerList()
+    public static ArrayList<Passenger> vacantArrayList=new ArrayList<>();
+    public static ArrayList<String> uo2=new ArrayList<String>();
+    public RetrieveVacantSeatsList()
     {
 
     }
-    public RetrievePassengerList(Context cxt)
+    public RetrieveVacantSeatsList(Context cxt)
     {
         context=cxt;
     }
-    private static final String passenger_URL="http://jeevan123.net46.net/login/retreievepassengerlist.php";
+    private static final String vacant_passenger_URL="http://jeevan123.net46.net/login/getvacantseats.php";
 
     @Override
     protected void onPreExecute() {
@@ -48,11 +48,11 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
         // TODO Auto-generated method stub
         BufferedReader br=null;
         StringBuffer sb;
-        String s="?coachnumber="+arg0[0]+"&trainnumber="+DateVerification.trainnumber+"&sdate="+NavigationActivity.selected_date;
+        String s="?source="+arg0[0]+"&trainnumber="+DateVerification.trainnumber+"&sdate="+NavigationActivity.selected_date;
         try
         {
 
-            URL url=new URL(passenger_URL+s);
+            URL url=new URL(vacant_passenger_URL+s);
             HttpURLConnection con=(HttpURLConnection) url.openConnection();
             br=new BufferedReader(new InputStreamReader(con.getInputStream()));
             String line;
@@ -85,8 +85,8 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
             JSONObject jo = new JSONObject(result);
             JSONArray ja = jo.getJSONArray("server_response");
 
-            while (count1 < ja.length()) {
-                JSONObject jo2 = ja.getJSONObject(count1);
+            while (count2 < ja.length()) {
+                JSONObject jo2 = ja.getJSONObject(count2);
                 String pname=jo2.getString("pname");
                 int age=jo2.getInt("age");
                 String sex=jo2.getString("sex");
@@ -102,17 +102,17 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
                 String status=jo2.getString("status");
                 String mobileno=jo2.getString("mobileno");
                 String pnrnumber=jo2.getString("pnrnumber");
-               // Toast.makeText(context,"pname "+pname+" date "+doj+"arrival " +arrival,Toast.LENGTH_LONG).show();
-                uo.add(count1,pname+" "+String.valueOf(seatno)+" "+coachno+" "+trno+" "+trname+" "+doj+" "+pnrnumber);
-               Toast.makeText(context,uo.get(count1),Toast.LENGTH_LONG).show();
-                 passengerArrayList.add(new Passenger(pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status,mobileno,pnrnumber));
-                count1++;
+                // Toast.makeText(context,"pname "+pname+" date "+doj+"arrival " +arrival,Toast.LENGTH_LONG).show();
+                uo2.add(count2,pname+" "+String.valueOf(seatno)+" "+coachno+" "+trno+" "+trname+" "+doj+" "+pnrnumber);
+          //      Toast.makeText(context,uo2.get(count2),Toast.LENGTH_LONG).show();
+                vacantArrayList.add(new Passenger(pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status,mobileno,pnrnumber));
+                count2++;
             }
             context.startActivity(new Intent(context, PassengerListActivity.class));
         }
 
         catch (Exception e) {
-           // Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+            // Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
         }
 
     }

@@ -28,7 +28,11 @@
         <activity android:name=".OTPVerificationActivity" />
         <activity android:name=".TrainBogiActivity" />
         <activity android:name=".GetCoachActivity" />
-        <activity android:name=".PassengerListActivity"></activity>
+        <activity android:name=".PassengerListActivity" />
+        <activity android:name=".PListSuccessActivity" />
+        <activity android:name=".VacantSeatsActivity" />
+        <activity android:name=".VacantSeatsListActivity" />
+        <activity android:name=".EnterVPDetails"></activity>
     </application>
 
 </manifest>
