@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class VacantSeatsActivity extends AppCompatActivity {
     Spinner spinner1;
-public String source="";
+public static String source="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public String source="";
     public void vacancy(View v)
     {
         RetrieveVacantSeatsList rvl=new RetrieveVacantSeatsList(VacantSeatsActivity.this);
-        rvl.execute(source);
+        rvl.execute();
     //VacantSeatsListActivity
     }
 }

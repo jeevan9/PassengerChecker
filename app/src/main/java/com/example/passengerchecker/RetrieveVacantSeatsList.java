@@ -48,7 +48,7 @@ public class  RetrieveVacantSeatsList extends AsyncTask<String,Void,String>{
         // TODO Auto-generated method stub
         BufferedReader br=null;
         StringBuffer sb;
-        String s="?source="+arg0[0]+"&trainnumber="+DateVerification.trainnumber+"&sdate="+NavigationActivity.selected_date;
+        String s="?source="+VacantSeatsActivity.source+"&trainnumber="+DateVerification.trainnumber+"&sdate="+NavigationActivity.selected_date;
         try
         {
 
@@ -108,7 +108,7 @@ public class  RetrieveVacantSeatsList extends AsyncTask<String,Void,String>{
                 vacantArrayList.add(new Passenger(pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status,mobileno,pnrnumber));
                 count2++;
             }
-            context.startActivity(new Intent(context, PassengerListActivity.class));
+            context.startActivity(new Intent(context, VacantSeatsListActivity.class));
         }
 
         catch (Exception e) {
