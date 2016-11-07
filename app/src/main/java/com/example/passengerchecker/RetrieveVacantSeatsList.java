@@ -24,7 +24,7 @@ public class  RetrieveVacantSeatsList extends AsyncTask<String,Void,String>{
     public static int count2 = 0;
     ProgressDialog loading;
 
-    public static ArrayList<Passenger> vacantArrayList=new ArrayList<>();
+    public static ArrayList<Passenger> vacantArrayList=new ArrayList<Passenger>();
     public static ArrayList<String> uo2=new ArrayList<String>();
     public RetrieveVacantSeatsList()
     {
