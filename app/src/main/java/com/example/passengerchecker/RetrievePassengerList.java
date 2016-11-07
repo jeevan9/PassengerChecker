@@ -23,6 +23,7 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
     private Context context;
     public static int count1 = 0;
     ProgressDialog loading;
+    //callback callback;
 
     public static ArrayList<Passenger> passengerArrayList=new ArrayList<>();
     public static ArrayList<String> uo=new ArrayList<String>();
@@ -105,17 +106,33 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
                 // Toast.makeText(context,"pname "+pname+" date "+doj+"arrival " +arrival,Toast.LENGTH_LONG).show();
                 uo.add(count1,pname+" "+String.valueOf(seatno)+" "+coachno+" "+trno+" "+trname+" "+doj+" "+pnrnumber);
                // Toast.makeText(context,uo.get(count1),Toast.LENGTH_LONG).show();
+
                 passengerArrayList.add(new Passenger(pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status,mobileno,pnrnumber));
                 count1++;
             }
-            context.startActivity(new Intent(context, PassengerListActivity.class));
+
+            //System.out.print(passengerArrayList.get(1).arrival);
+           // Toast.makeText(context,passengerArrayList.get(1).arrival,Toast.LENGTH_SHORT).show();
+           // callback.send(passengerArrayList);
+            context.startActivity(new Intent(context,PassengerListActivity.class));
         }
 
         catch (Exception e) {
-            // Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+             Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
         }
+
+
+
 
     }
 
-
+    /*public void setInit(callback callback1)
+    {
+        this.callback=callback1;
+    }
+/*
+public interface callback
+{
+    public void send(ArrayList<Passenger> passengers);
+}*/
 }

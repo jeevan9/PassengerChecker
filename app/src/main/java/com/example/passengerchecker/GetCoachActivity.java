@@ -11,9 +11,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class GetCoachActivity extends AppCompatActivity {
+public class GetCoachActivity extends AppCompatActivity  {
     Spinner spinner1;
     GetCoach gc1=new GetCoach();
+   // RetrievePassengerList.callback callback;
     public String cno="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,19 @@ public class GetCoachActivity extends AppCompatActivity {
     public void passengerlist(View v)
     {
         RetrievePassengerList rpl=new RetrievePassengerList(GetCoachActivity.this);
+        //rpl.setInit(this);
         rpl.execute(cno);
     }
+
+   /* @Override
+    public void send(ArrayList<Passenger> passengers) {
+
+       // Intent intent=new Intent(GetCoachActivity.this,PassengerListActivity.class);
+        //intent.putParcelableArrayListExtra("list",passengers);
+
+        Intent i = new Intent(GetCoachActivity.this,PassengerListActivity.class);
+        //i.putExtra("obj", wrapper);
+        i.putExtra("student", passengers);
+        startActivity(i);
+    }*/
 }

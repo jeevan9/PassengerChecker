@@ -91,6 +91,7 @@ public class PassengerListAdapter extends RecyclerView.Adapter<PassengerListAdap
     }
     @Override
     public PersonViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.passeneger_card, viewGroup, false);
         PersonViewHolder pvh = new PersonViewHolder(v,ctx,persons);
         return pvh;
