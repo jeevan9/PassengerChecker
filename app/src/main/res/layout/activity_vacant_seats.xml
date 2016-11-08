@@ -75,8 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Get Vacant Seats List"
-            android:onClick="vacancy"
-
+           android:onClick="vac"
             />
 
     </LinearLayout>

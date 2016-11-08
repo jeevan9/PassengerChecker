@@ -35,10 +35,15 @@ public static String source="";
             }
         });
     }
-    public void vacancy(View v)
+  /* public void vacancy(View v)
     {
-        RetrieveVacantSeatsList rvl=new RetrieveVacantSeatsList(VacantSeatsActivity.this);
-        rvl.execute();
+        RetrieveVacantSeatsList rvl1=new RetrieveVacantSeatsList(VacantSeatsActivity.this);
+        rvl1.execute();
     //VacantSeatsListActivity
+    }*/
+    public void vac(View v)
+    {
+        RetrieveVacantSeatsList rvl1=new RetrieveVacantSeatsList(VacantSeatsActivity.this);
+        rvl1.execute();
     }
 }

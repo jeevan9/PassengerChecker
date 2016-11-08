@@ -22,6 +22,7 @@ public class  Login extends AsyncTask<String,Void,String>{
     String name,emailid;
     ProgressDialog loading;
     public static String logged_in_user="";
+    public static String ttmobile_number="";
     public Login()
     {
         this.name="name";
@@ -85,6 +86,7 @@ public class  Login extends AsyncTask<String,Void,String>{
             emailid=res[2];
             String user_id=res[3];
             logged_in_user=user_id;
+            ttmobile_number=res[4];
             context.startActivity(new Intent(context, NavigationActivity.class));
             //NavigationActivity name1=new NavigationActivity(res[1],res[2]);
         }

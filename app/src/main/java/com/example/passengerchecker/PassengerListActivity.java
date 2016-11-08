@@ -34,4 +34,11 @@ public class PassengerListActivity extends AppCompatActivity {
         Intent i=new Intent(this,PListSuccessActivity.class);
         startActivity(i);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+     //   finish();
+    RetrievePassengerList.passengerArrayList.clear();
+    }
 }

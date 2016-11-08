@@ -32,7 +32,8 @@
         <activity android:name=".PListSuccessActivity" />
         <activity android:name=".VacantSeatsActivity" />
         <activity android:name=".VacantSeatsListActivity" />
-        <activity android:name=".EnterVPDetails"></activity>
+        <activity android:name=".EnterVPDetails" />
+        <activity android:name=".PaymentSuccesfulActivity"></activity>
     </application>
 
 </manifest>

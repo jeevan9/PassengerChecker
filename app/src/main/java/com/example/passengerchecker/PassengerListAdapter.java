@@ -114,82 +114,6 @@ public class PassengerListAdapter extends RecyclerView.Adapter<PassengerListAdap
         personViewHolder.status.setText(persons.get(i).status);
         personViewHolder.mobileno.setText(persons.get(i).mobileno);
         personViewHolder.pnrno.setText(persons.get(i).pnrno);
-        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
-        Date currentLocalTime = cal.getTime();
-        DateFormat date = new SimpleDateFormat("HH:mm a");
-// you can get seconds by adding  "...:ss" to it
-        date.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
-
-
-        String localTime = date.format(currentLocalTime);
-        Toast.makeText(ctx,localTime,Toast.LENGTH_LONG).show();
-        Log.v("time",localTime);
-
-        String lt1[] = localTime.split(" ");
-        String lt2[] = lt1[0].split(":");
-        //Toast.makeText(ctx, lt1[0] + " bgjb " + lt1[1], Toast.LENGTH_LONG).show();
-        //Toast.makeText(ctx, lt2[0] + " bgjb " + lt2[1], Toast.LENGTH_LONG).show();
-
-        int chr = Integer.parseInt(lt2[0]);
-        if (chr>=13)
-        {
-            chr=chr-12;
-            Toast.makeText(ctx,String.valueOf(chr),Toast.LENGTH_SHORT).show();
-        }
-        int cmin = Integer.parseInt(lt2[1]);
-        // Toast.makeText(ctx, chr + " hi " + cmin, Toast.LENGTH_LONG).show();
-
-
-        String tm = persons.get(i).arrival;
-      Toast.makeText(ctx, " Arrival "+tm, Toast.LENGTH_LONG).show();
-
-        char[] tmc=tm.toCharArray();
-        //Toast.makeText(ctx, String.valueOf(tmc[1]), Toast.LENGTH_LONG).show();
-
-        StringBuilder sbh = new StringBuilder();
-        StringBuilder sbm = new StringBuilder();
-        StringBuilder sba = new StringBuilder();
-        String h = "", m = "", a = "";
-        sbh.append(String.valueOf(tmc[0]));
-        sbh.append(String.valueOf(tmc[1]));
-        h = sbh.toString();
-        // Toast.makeText(ctx, "hr : " + h, Toast.LENGTH_LONG).show();
-        int dh = Integer.parseInt(h);
-        //Toast.makeText(ctx, "hr : " + dh, Toast.LENGTH_LONG).show();
-
-        sbm.append(String.valueOf(tmc[3]));
-        sbm.append(String.valueOf(tmc[4]));
-
-        m = sbm.toString();
-        //    Toast.makeText(ctx, "min : " + m, Toast.LENGTH_LONG).show();
-        int dm = Integer.parseInt(m);
-        //  Toast.makeText(ctx, "min : " + dm, Toast.LENGTH_LONG).show();
-        sba.append(String.valueOf(tmc[5]));
-        sba.append(String.valueOf(tmc[6]));
-        a = sba.toString();
-        //  Toast.makeText(ctx,a,Toast.LENGTH_LONG).show();
-        flag = 0;
-        if (a.equals(lt1[1])) {
-            if (dh <=chr )
-            {
-                if(dh==chr)
-                {
-                    if(dm < cmin)
-                    {
-                        flag = 1;
-                    }
-                    else
-                        flag=0;
-                }
-                flag=1;
-            }
-
-            else
-            {
-                flag=0;
-            }
-
-        }
 
 
         personViewHolder.cb.setOnClickListener(new View.OnClickListener()
@@ -197,20 +121,14 @@ public class PassengerListAdapter extends RecyclerView.Adapter<PassengerListAdap
 
             @Override
             public void onClick (View v) {
-                if (flag == 1) {
-                    String result = RetrievePassengerList.uo.get(i);
-                    String res[] = result.split(" ");
-                    AdminAccept aa = new AdminAccept(ctx);
-                    aa.execute(res[0], res[1], res[2], res[3], res[4], res[5], res[6]);
-                    //Toast.makeText(ctx,"Accept Clicked at pos : "+i+" Username : "+res[0]+"Ordernumber "+res[1],Toast.LENGTH_SHORT).show();
-                    delete_accept(i);
-                    // Toast.makeText(ctx,"Accept Clicked at pos : "+i,Toast.LENGTH_SHORT).show();
-                }
 
-                else if (flag==0)
-                {
-                    Toast.makeText(ctx,"Arrival time is greater than current time",Toast.LENGTH_SHORT).show();
-                }
+                String result = RetrievePassengerList.uo.get(i);
+                String res[] = result.split(" ");
+                AdminAccept aa = new AdminAccept(ctx);
+                aa.execute(res[0], res[1], res[2], res[3], res[4], res[5], res[6]);
+                //Toast.makeText(ctx,"Accept Clicked at pos : "+i+" Username : "+res[0]+"Ordernumber "+res[1],Toast.LENGTH_SHORT).show();
+                delete_accept(i);
+                // Toast.makeText(ctx,"Accept Clicked at pos : "+i,Toast.LENGTH_SHORT).show();
 
             }
 
