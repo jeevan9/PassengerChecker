@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/i1"
                 android:layout_marginTop="13dp"
-                android:src="@drawable/un2"
+                android:src="@drawable/bn"
                 android:layout_weight="1"
                 />
             <EditText
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/i2"
                 android:layout_marginTop="13dp"
-                android:src="@drawable/un2"
+                android:src="@drawable/cno"
                 android:layout_weight="1"
                 />
             <EditText
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/i3"
                 android:layout_marginTop="13dp"
-                android:src="@drawable/p5"
+                android:src="@drawable/un2"
                 android:layout_weight="1"
                 />
             <EditText
@@ -97,7 +97,7 @@
                 android:hint="CardHolder Name"
                 android:id="@+id/editText3"
                 android:backgroundTint="@android:color/holo_green_light"
-                android:inputType="textPassword"
+
                 />
         </LinearLayout>
 
@@ -114,7 +114,7 @@
                 android:layout_height="33dp"
                 android:id="@+id/i4"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/email"
+                android:src="@drawable/datechooser"
                 android:layout_weight="1"
                 />
             <EditText
@@ -139,7 +139,7 @@
                 android:layout_height="35dp"
                 android:id="@+id/i5"
                 android:layout_marginTop="7dp"
-                android:src="@drawable/phone"
+                android:src="@drawable/cno"
                 android:layout_weight="1"
                 />
             <EditText
@@ -190,7 +190,7 @@
                 android:layout_height="35dp"
                 android:id="@+id/i7"
                 android:layout_marginTop="7dp"
-                android:src="@drawable/phone"
+                android:src="@drawable/fine"
                 android:layout_weight="1"
                 />
             <EditText
