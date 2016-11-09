@@ -46,7 +46,7 @@ public class PaymentProcess extends AsyncTask<String,Void,String> {
         // TODO Auto-generated method stub
         BufferedReader br=null;
         StringBuffer sb;
-        String bname="",cardno="",chname="",expiry="",cvvno="",mobno="",fine="";
+        String bname="",cardno="",chname="",expiry="",cvvno="",mobno="",fine="",pass="";
          bname=arg0[0];
         cardno=arg0[1];
         chname=arg0[2];
@@ -54,7 +54,8 @@ public class PaymentProcess extends AsyncTask<String,Void,String> {
         cvvno=arg0[4];
         mobno=arg0[5];
         fine=arg0[6];
-        String s="?bname="+bname+"&cno="+cardno+"&cname="+chname+"&expiry="+expiry+"&cvv="+cvvno+"&mobileno="+arg0[5]+"&reqamt="+fine+"&source="+VacantSeatsActivity.source+"&destination=VINUKONDA"+"&trainnumber="+DateVerification.trainnumber;
+        pass=arg0[7];
+        String s="?bname="+bname+"&cno="+cardno+"&cname="+chname+"&expiry="+expiry+"&cvv="+cvvno+"&mobileno="+arg0[5]+"&reqamt="+fine+"&source="+VacantSeatsActivity.source+"&destination="+VacantListAdapater.destination1+"&trainnumber="+DateVerification.trainnumber+"&password="+pass;
         try
         {
 
@@ -90,9 +91,9 @@ public class PaymentProcess extends AsyncTask<String,Void,String> {
         String res[]=result.split(" ");
         if(res[0].equals("Payment")) {
             try {
-                String messageToSend = "From IRCTC ==> "+result;
+                String messageToSend = "From IRCTC ==> "+res[0]+" "+res[1];
 
-                String messageToSend1 = "Fine paid  ==> "+result;
+                String messageToSend1 = "Fine paid  ==> "+res[0]+" "+res[1];
                 String no = res[2];
 
                 SmsManager smsOperation = SmsManager.getDefault();

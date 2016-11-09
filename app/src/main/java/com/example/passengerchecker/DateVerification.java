@@ -85,7 +85,7 @@ public class  DateVerification extends AsyncTask<String,Void,String>{
         // TODO Auto-generated method stub
         super.onPostExecute(result);
         loading.dismiss();
-        Toast.makeText(context,result, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context,result, Toast.LENGTH_SHORT).show();
         String res[]=result.split(" ");
         if(res[0].equals("Welcome"))
         {

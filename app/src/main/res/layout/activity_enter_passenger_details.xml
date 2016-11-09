@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sign_up"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#00BCD4"
+    tools:context="com.example.passengerchecker.EnterPassengerDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:orientation="vertical"
+        android:id="@+id/ll1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp">
+        <LinearLayout
+            android:layout_below="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/l1"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            >
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/i1"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/un2"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:layout_marginLeft="20dp"
+                android:hint="Passennger Name"
+                android:backgroundTint="@android:color/holo_green_light"
+                android:id="@+id/editText1"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/l2"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/l1"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/i2"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/un2"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:layout_marginLeft="20dp"
+                android:hint="Age"
+                android:id="@+id/editText2"
+                android:backgroundTint="@android:color/holo_green_light"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/l3"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/l2"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/i3"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/p5"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:layout_marginLeft="20dp"
+                android:hint="Sex(m/f)"
+                android:id="@+id/editText3"
+                android:backgroundTint="@android:color/holo_green_light"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/l4"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/l3"
+            >
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="33dp"
+                android:id="@+id/i4"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/phone"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:layout_marginLeft="20dp"
+                android:hint="Mobile no."
+                android:id="@+id/editText4"
+                android:backgroundTint="@android:color/holo_green_light"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/ll1"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:text="Update Passenger Details"
+            android:onClick="update"
+            android:layout_weight="1"
+            android:background="#FF6F00"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

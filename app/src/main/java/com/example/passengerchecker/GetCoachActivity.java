@@ -31,7 +31,7 @@ public class GetCoachActivity extends AppCompatActivity  {
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(GetCoachActivity.this, "Selected Item is "+parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(GetCoachActivity.this, "Selected Coach is "+parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
                 cno= (String) parent.getItemAtPosition(position);
 
             }

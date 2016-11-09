@@ -97,7 +97,7 @@ public class  AdminAccept extends AsyncTask<String,Void,String>{
         loading.dismiss();
         //Toast.makeText(context, "doj "+doj ,Toast.LENGTH_LONG).show();
 
-        Toast.makeText(context,result,Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(context,result,Toast.LENGTH_SHORT).show();
         String res[]=result.split(" ");
         if(res[0].equals("Your"))
         {
@@ -109,7 +109,7 @@ public class  AdminAccept extends AsyncTask<String,Void,String>{
                 PendingIntent sentPI;
                 String sent="SMS_SENT";
                 sentPI=PendingIntent.getBroadcast(context,0,new Intent(sent),0);
-                Toast.makeText(context," Mobile no : "+ res[12],Toast.LENGTH_LONG).show();
+               // Toast.makeText(context," Mobile no : "+ res[12],Toast.LENGTH_LONG).show();
                 smsOperation.sendTextMessage(res[12], null, messageToSend, sentPI, null);
                 Toast.makeText(context, "Order Accepted and SMS Sent Seuccessfully ", Toast.LENGTH_SHORT).show();
             }

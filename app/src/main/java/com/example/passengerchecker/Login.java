@@ -78,8 +78,10 @@ public class  Login extends AsyncTask<String,Void,String>{
         // TODO Auto-generated method stub
         super.onPostExecute(result);
         loading.dismiss();
-        Toast.makeText(context,result, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(context,result, Toast.LENGTH_SHORT).show();
         String res[]=result.split(" ");
+
+         Toast.makeText(context,res[0]+" "+res[1], Toast.LENGTH_SHORT).show();
         if(res[0].equals("Welcome"))
         {
             name=res[1];

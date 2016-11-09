@@ -82,46 +82,48 @@ public class  RetrievePassengerList extends AsyncTask<String,Void,String>{
         super.onPostExecute(result);
         loading.dismiss();
         count1=0;
+        if(result.equals("All-Passengers-Present"))
         Toast.makeText(context,result, Toast.LENGTH_SHORT).show();
-        try {
+        else {
+            try {
 
-            JSONObject jo = new JSONObject(result);
-            JSONArray ja = jo.getJSONArray("server_response");
-Toast.makeText(context,"Hi i am in post method ",Toast.LENGTH_SHORT).show();
-            while (count1 < ja.length()) {
-                JSONObject jo2 = ja.getJSONObject(count1);
-                String pname=jo2.getString("pname");
-                int age=jo2.getInt("age");
-                String sex=jo2.getString("sex");
-                int seatno=jo2.getInt("seatno");
-                String coachno=jo2.getString("coachno");
-                String  source=jo2.getString("source");
-                String destination=jo2.getString("destination");
-                String doj=jo2.getString("doj");
-                String arrival=jo2.getString("arrival");
-                String departure=jo2.getString("departure");
-                String trno=jo2.getString("trainnumber");
-                String trname=jo2.getString("trainname");
-                String status=jo2.getString("status");
-                String mobileno=jo2.getString("mobileno");
-                String pnrnumber=jo2.getString("pnrnumber");
-                 Toast.makeText(context,"pname "+pname+" date "+doj+"arrival " +arrival,Toast.LENGTH_LONG).show();
-                uo.add(count1,pname+" "+String.valueOf(seatno)+" "+coachno+" "+trno+" "+trname+" "+doj+" "+pnrnumber);
-               // Toast.makeText(context,uo.get(count1),Toast.LENGTH_LONG).show();
 
-                passengerArrayList.add(new Passenger(pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status,mobileno,pnrnumber));
-                count1++;
+                JSONObject jo = new JSONObject(result);
+                JSONArray ja = jo.getJSONArray("server_response");
+//Toast.makeText(context,"Hi i am in post method ",Toast.LENGTH_SHORT).show();
+                while (count1 < ja.length()) {
+                    JSONObject jo2 = ja.getJSONObject(count1);
+                    String pname = jo2.getString("pname");
+                    int age = jo2.getInt("age");
+                    String sex = jo2.getString("sex");
+                    int seatno = jo2.getInt("seatno");
+                    String coachno = jo2.getString("coachno");
+                    String source = jo2.getString("source");
+                    String destination = jo2.getString("destination");
+                    String doj = jo2.getString("doj");
+                    String arrival = jo2.getString("arrival");
+                    String departure = jo2.getString("departure");
+                    String trno = jo2.getString("trainnumber");
+                    String trname = jo2.getString("trainname");
+                    String status = jo2.getString("status");
+                    String mobileno = jo2.getString("mobileno");
+                    String pnrnumber = jo2.getString("pnrnumber");
+                    // Toast.makeText(context,"pname "+pname+" date "+doj+"arrival " +arrival,Toast.LENGTH_LONG).show();
+                    uo.add(count1, pname + " " + String.valueOf(seatno) + " " + coachno + " " + trno + " " + trname + " " + doj + " " + pnrnumber);
+                    // Toast.makeText(context,uo.get(count1),Toast.LENGTH_LONG).show();
 
+                    passengerArrayList.add(new Passenger(pname, age, sex, seatno, coachno, source, destination, doj, arrival, departure, trno, trname, status, mobileno, pnrnumber));
+                    count1++;
+
+                }
+
+                //System.out.print(passengerArrayList.get(1).arrival);
+                // Toast.makeText(context,passengerArrayList.get(1).arrival,Toast.LENGTH_SHORT).show();
+                // callback.send(passengerArrayList);
+                context.startActivity(new Intent(context, PassengerListActivity.class));
+            } catch (Exception e) {
+                // Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
             }
-
-            //System.out.print(passengerArrayList.get(1).arrival);
-           // Toast.makeText(context,passengerArrayList.get(1).arrival,Toast.LENGTH_SHORT).show();
-           // callback.send(passengerArrayList);
-            context.startActivity(new Intent(context,PassengerListActivity.class));
-        }
-
-        catch (Exception e) {
-             Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
         }
 
 

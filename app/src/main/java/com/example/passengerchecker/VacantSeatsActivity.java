@@ -23,7 +23,7 @@ public static String source="";
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(VacantSeatsActivity.this, "Selected Item is "+parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(VacantSeatsActivity.this, "Selected Source is "+parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
                 source= (String) parent.getItemAtPosition(position);
 
             }

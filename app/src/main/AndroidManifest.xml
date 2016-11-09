@@ -33,7 +33,8 @@
         <activity android:name=".VacantSeatsActivity" />
         <activity android:name=".VacantSeatsListActivity" />
         <activity android:name=".EnterVPDetails" />
-        <activity android:name=".PaymentSuccesfulActivity"></activity>
+        <activity android:name=".PaymentSuccesfulActivity" />
+        <activity android:name=".EnterPassengerDetails"></activity>
     </application>
 
 </manifest>

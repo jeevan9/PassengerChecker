@@ -21,13 +21,16 @@ import java.util.List;
 
 public class VacantListAdapater extends RecyclerView.Adapter<VacantListAdapater.PersonViewHolder1> {
     int c=0;
-    public static String pname1="",coachno1="",source1="",destination1="",doj="";
+    int sno;
+    public static String pname1="",coachno1="",source1="",destination1="",doj1="",pnrno1="";
+    public static int seatno1;
     Context ctx;
     public static class PersonViewHolder1 extends RecyclerView.ViewHolder{
         List<Passenger> personss2=new ArrayList<Passenger>();
         //CardView cv;
         CardView cvv;
         Context ctx;
+
         TextView pname,age,sex,seatno,coachno,source,destination,doj,arrival,departure,trno,trname,status,cb,pnrno,mobileno;
 
         PersonViewHolder1(View itemView, Context ctx, List<Passenger> personss) {
@@ -93,22 +96,21 @@ View v=LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.vacant_passe
         personViewHolder.status.setText(persons2.get(i).status);
         personViewHolder.mobileno.setText(persons2.get(i).mobileno);
         personViewHolder.pnrno.setText(persons2.get(i).pnrno);
-        //Log.v("vacantbind","at pos "+String.valueOf(i));
-        Toast.makeText(ctx,"vacantbind"+String.valueOf(i),Toast.LENGTH_SHORT).show();
+       // Toast.makeText(ctx,"vacantbind"+String.valueOf(i),Toast.LENGTH_SHORT).show();
         personViewHolder.cb.setOnClickListener(new View.OnClickListener()
         {
 
             @Override
             public void onClick(View v) {
-                //Log.v("vacantbindbutt","at pos "+String.valueOf(i));
 
-                Toast.makeText(ctx,"vacantbind butt"+String.valueOf(i),Toast.LENGTH_SHORT).show();
                 pname1=persons2.get(i).pname;
                 coachno1=persons2.get(i).coachno;
                 source1=persons2.get(i).source;
                 destination1=persons2.get(i).destination;
-                doj=persons2.get(i).doj;
-
+                doj1=persons2.get(i).doj;
+                seatno1=persons2.get(i).seatno;
+                pnrno1=persons2.get(i).pnrno;
+                Toast.makeText(ctx,"pname"+pname1+"coachno "+coachno1+"doj "+doj1,Toast.LENGTH_LONG).show();
                 Intent i=new Intent(ctx,EnterVPDetails.class);
                 ctx.startActivity(i);
 

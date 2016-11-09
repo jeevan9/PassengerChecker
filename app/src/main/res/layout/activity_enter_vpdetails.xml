@@ -24,7 +24,7 @@
         <LinearLayout
             android:layout_below="@+id/ll1"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:id="@+id/l1"
             android:orientation="horizontal"
             android:layout_marginTop="30dp"
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/i1"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="0dp"
                 android:src="@drawable/bn"
                 android:layout_weight="1"
                 />
@@ -51,7 +51,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/l2"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:orientation="horizontal"
             android:layout_below="@+id/l1"
             >
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/i2"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="0dp"
                 android:src="@drawable/cno"
                 android:layout_weight="1"
                 />
@@ -77,7 +77,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/l3"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:orientation="horizontal"
             android:layout_below="@+id/l2"
             >
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/i3"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="3dp"
                 android:src="@drawable/un2"
                 android:layout_weight="1"
                 />
@@ -105,7 +105,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/l4"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:orientation="horizontal"
             android:layout_below="@+id/l3"
             >
@@ -113,7 +113,7 @@
                 android:layout_width="35dp"
                 android:layout_height="33dp"
                 android:id="@+id/i4"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:src="@drawable/datechooser"
                 android:layout_weight="1"
                 />
@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:layout_marginLeft="20dp"
-                android:hint="Expiry"
+                android:hint="Expiry(mm/yy)"
                 android:id="@+id/editText4"
                 android:backgroundTint="@android:color/holo_green_light"
                 />
@@ -130,7 +130,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/l5"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:orientation="horizontal"
             android:layout_below="@+id/l4"
             >
@@ -138,7 +138,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:id="@+id/i5"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="0dp"
                 android:src="@drawable/cno"
                 android:layout_weight="1"
                 />
@@ -155,7 +155,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/l6"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:orientation="horizontal"
             android:layout_below="@+id/l4"
             >
@@ -163,7 +163,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:id="@+id/i6"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="0dp"
                 android:src="@drawable/phone"
                 android:layout_weight="1"
                 />
@@ -181,7 +181,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/l7"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:orientation="horizontal"
             android:layout_below="@+id/l4"
             >
@@ -189,7 +189,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:id="@+id/i7"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="0dp"
                 android:src="@drawable/fine"
                 android:layout_weight="1"
                 />
@@ -200,6 +200,32 @@
                 android:layout_marginLeft="20dp"
                 android:hint="Fine"
                 android:id="@+id/editText7"
+                android:backgroundTint="@android:color/holo_green_light"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/l8"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/l4"
+            >
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/i8"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/p5"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:layout_marginLeft="20dp"
+                android:hint="Password"
+                android:id="@+id/editText8"
+                android:inputType="textPassword"
                 android:backgroundTint="@android:color/holo_green_light"
                 />
         </LinearLayout>
