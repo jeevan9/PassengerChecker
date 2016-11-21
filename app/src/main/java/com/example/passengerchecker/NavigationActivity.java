@@ -126,13 +126,7 @@ String sdate=ta1.getText().toString();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.chp) {
+         if (id == R.id.chp) {
             Intent i=new Intent(this,PasswordChangeActivity.class);
             startActivity(i);
         }
@@ -145,9 +139,6 @@ String sdate=ta1.getText().toString();
             startActivity(i);
         }
 
-        else if (id == R.id.nav_share) {
-
-        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

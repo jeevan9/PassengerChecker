@@ -1,5 +1,6 @@
 package com.example.passengerchecker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,5 +27,10 @@ public class EnterPassengerDetails extends AppCompatActivity {
         mobileno=e4.getText().toString();
         UpdateVacantPassenger uvp=new UpdateVacantPassenger(this);
         uvp.execute(pname,age,sex,mobileno);
+    }
+    public void backtologin(View v)
+    {
+        Intent i=new Intent(this,MainActivity.class);
+        startActivity(i);
     }
 }

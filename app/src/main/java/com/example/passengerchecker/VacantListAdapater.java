@@ -96,7 +96,7 @@ View v=LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.vacant_passe
         personViewHolder.status.setText(persons2.get(i).status);
         personViewHolder.mobileno.setText(persons2.get(i).mobileno);
         personViewHolder.pnrno.setText(persons2.get(i).pnrno);
-       // Toast.makeText(ctx,"vacantbind"+String.valueOf(i),Toast.LENGTH_SHORT).show();
+
         personViewHolder.cb.setOnClickListener(new View.OnClickListener()
         {
 
@@ -110,7 +110,6 @@ View v=LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.vacant_passe
                 doj1=persons2.get(i).doj;
                 seatno1=persons2.get(i).seatno;
                 pnrno1=persons2.get(i).pnrno;
-                Toast.makeText(ctx,"pname"+pname1+"coachno "+coachno1+"doj "+doj1,Toast.LENGTH_LONG).show();
                 Intent i=new Intent(ctx,EnterVPDetails.class);
                 ctx.startActivity(i);
 

@@ -1,5 +1,6 @@
 package com.example.passengerchecker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,5 +34,10 @@ EditText e1,e2,e3,e4,e5,e6,e7,e8;
         pass=e8.getText().toString();
         PaymentProcess pp=new PaymentProcess(EnterVPDetails.this);
         pp.execute(bname,cardno,chname,expiry,cvvno,mobno,fine,pass);
+    }
+    public void backtologin(View v)
+    {
+        Intent i=new Intent(this,MainActivity.class);
+        startActivity(i);
     }
 }

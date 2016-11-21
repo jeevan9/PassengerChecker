@@ -10,10 +10,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#00BCD4"
     tools:context="com.example.passengerchecker.PListSuccessActivity">
     <TextView
+        android:textColor="#000000"
+        android:textSize="25dp"
+        android:textStyle="italic|bold"
         android:id="@+id/tv"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:layout_below="@+id/activity_plist_success"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,9 +36,14 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
         android:onClick="home"
+        android:background="#FF6F00"
+        android:textColor="#FFFFFF"
         />
 
         <Button
+            android:layout_marginLeft="10dp"
+            android:background="#FF6F00"
+            android:textColor="#FFFFFF"
             android:layout_weight="1"
             android:text="vacant seats"
             android:id="@+id/vacantseats"
